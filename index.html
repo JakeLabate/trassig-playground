@@ -33,6 +33,9 @@
   --deep:#1b2026;
   --deep-muted:#c3c9cf;
   --line:#8d8880;
+  --mark-pink:#f1627d;
+  --mark-green:#54b47d;
+  --mark-gold:#e0a74d;
   --wide:1180px;
   --gap:clamp(1.25rem,3vw,2.25rem);
 }
@@ -94,7 +97,7 @@ p{margin:0 0 1.05em;max-width:70ch}
 }
 .head-in{display:flex;align-items:center;gap:1rem;min-height:78px;flex-wrap:wrap;padding-top:.5rem;padding-bottom:.5rem}
 .brandmark{display:flex;align-items:center;text-decoration:none;flex:none}
-.brandmark img{width:172px;height:38px}
+.brandmark img{width:172px;height:auto}
 .wordmark{
   font-family:"Archivo",system-ui,sans-serif;font-variation-settings:"wdth" 85;
   font-weight:900;font-size:1.5rem;letter-spacing:-.02em;color:var(--ink);text-transform:lowercase;
@@ -132,8 +135,8 @@ p{margin:0 0 1.05em;max-width:70ch}
 .hero-media img{width:100%;height:100%;object-fit:cover;min-height:220px}
 @media(min-width:900px){
   .hero-grid{grid-template-columns:1.05fr .95fr;gap:clamp(2rem,4vw,3.5rem)}
-  .hero-media{min-height:440px}
-  .hero-media img{min-height:440px}
+  .hero-media{min-height:360px}
+  .hero-media img{min-height:360px}
 }
 .page-head{background:var(--deep);color:var(--paper);border-bottom:8px solid var(--brand);padding:clamp(2.3rem,5vw,3.6rem) 0}
 .page-head h1{color:var(--paper);margin-bottom:.35em}
@@ -177,6 +180,9 @@ section{padding:clamp(2.8rem,6vw,4.8rem) 0}
   padding:1.5rem 1.4rem 1.6rem;
 }
 .tint .card{background:var(--paper)}
+.card-a{border-top-color:var(--mark-pink)}
+.card-b{border-top-color:var(--mark-green)}
+.card-c{border-top-color:var(--mark-gold)}
 .card h3{margin-bottom:.5rem}
 .card p:last-child{margin-bottom:0}
 .card ul{margin:.6rem 0 0;padding-left:1.1rem}
@@ -218,6 +224,7 @@ section{padding:clamp(2.8rem,6vw,4.8rem) 0}
 /* media */
 .figure{border:1px solid var(--line);background:var(--surface)}
 .figure img{width:100%;height:auto}
+.figure-wide img{aspect-ratio:480/190;object-fit:cover}
 .figure figcaption{padding:.7rem .9rem;font-size:.85rem;color:var(--muted)}
 .videos{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem;margin-top:2rem}
 @media(min-width:900px){.videos{grid-template-columns:repeat(4,1fr)}}
@@ -323,7 +330,7 @@ section{padding:clamp(2.8rem,6vw,4.8rem) 0}
   <header class="site-head">
     <div class="wrap head-in">
       <a class="brandmark" href="index.html">
-        <img src="img/logo.png" alt="Trassig" width="172" height="38">
+        <img src="img/logo.png" alt="Trassig" width="400" height="88">
       </a>
       <nav class="nav" aria-label="Main">
         <a href="index.html" aria-current="page">Home</a>
@@ -350,7 +357,7 @@ section{padding:clamp(2.8rem,6vw,4.8rem) 0}
             </div>
           </div>
           <div class="hero-media">
-            <img src="img/warehouse.jpg" alt="The Trassig distribution warehouse in Bethel, Connecticut" width="480" height="360" fetchpriority="high">
+            <img src="img/inspection-ny.jpg" alt="A certified inspector checking equipment on a commercial playground" width="480" height="360" fetchpriority="high">
           </div>
         </div>
       </div>
@@ -369,7 +376,7 @@ section{padding:clamp(2.8rem,6vw,4.8rem) 0}
         <h2>Fix it, surface it, or have it inspected</h2>
         <p class="lead">Most playground problems fall into one of three buckets. Trassig covers all three, and the same people answer the phone for each.</p>
         <div class="cards cards-3">
-          <div class="card">
+          <div class="card card-a">
             <h3>Maintenance and repair products</h3>
             <p>Repair kits for poured in place rubber, synthetic turf, playground decking, and running tracks, plus the binders, conditioners, and tools that go with them.</p>
             <ul>
@@ -379,7 +386,7 @@ section{padding:clamp(2.8rem,6vw,4.8rem) 0}
               <li>Synthetic turf and running track kits</li>
             </ul>
           </div>
-          <div class="card">
+          <div class="card card-b">
             <h3>Safety surfacing and equipment</h3>
             <p>Full surfacing systems and commercial play equipment, sold to schools, parks, daycares, and property managers, with site amenities and sports equipment alongside.</p>
             <ul>
@@ -389,7 +396,7 @@ section{padding:clamp(2.8rem,6vw,4.8rem) 0}
               <li>Shade structures, benches, bike racks</li>
             </ul>
           </div>
-          <div class="card">
+          <div class="card card-c">
             <h3>Risk management</h3>
             <p>Certified playground inspections and ASTM audits across New England and the mid Atlantic, plus remote code and ADA compliance review anywhere in the world.</p>
             <ul>
@@ -419,7 +426,7 @@ section{padding:clamp(2.8rem,6vw,4.8rem) 0}
         </div>
         <div>
           <figure class="figure">
-            <img src="img/inspection-ct.jpg" alt="A certified playground inspector measuring equipment on a commercial play structure" width="480" height="320" loading="lazy">
+            <img src="img/inspection-ct.jpg" alt="A certified playground inspector measuring equipment on a commercial play structure" width="480" height="276" loading="lazy">
             <figcaption>A Trassig inspector working through a playground to ASTM and CPSC standards.</figcaption>
           </figure>
         </div>
@@ -445,7 +452,7 @@ section{padding:clamp(2.8rem,6vw,4.8rem) 0}
         <h2>The how to library</h2>
         <p>We film the repairs we sell kits for. Watch the method before you order so you know what the job actually involves.</p>
       <div class="videos">
-        <a class="video" href="https://youtu.be/rvGmoaW3EYk"><img src="img/video-pip-repair.jpg" alt="Repairing a hole in a poured in place rubber playground surface" width="300" height="169" loading="lazy"><span>How to repair a poured in place surface</span></a>
+        <a class="video" href="https://youtu.be/rvGmoaW3EYk"><img src="img/video-pip-repair.jpg" alt="Repairing a hole in a poured in place rubber playground surface" width="300" height="170" loading="lazy"><span>How to repair a poured in place surface</span></a>
         <a class="video" href="https://www.youtube.com/watch?v=pgWdryEcFcw"><img src="img/video-rebinder.jpg" alt="Applying Rebinder to a granulating rubber playground surface" width="300" height="169" loading="lazy"><span>How to apply Rebinder</span></a>
         <a class="video" href="https://youtu.be/HutsDzayWtU"><img src="img/video-turf-repair.jpg" alt="Repairing a damaged section of synthetic turf" width="300" height="169" loading="lazy"><span>How to repair synthetic turf</span></a>
         <a class="video" href="https://youtu.be/73fAblJJzQ8"><img src="img/video-turf-install.jpg" alt="Installing synthetic turf over a prepared base" width="300" height="169" loading="lazy"><span>How to install synthetic turf</span></a>

@@ -33,6 +33,9 @@
   --deep:#1b2026;
   --deep-muted:#c3c9cf;
   --line:#8d8880;
+  --mark-pink:#f1627d;
+  --mark-green:#54b47d;
+  --mark-gold:#e0a74d;
   --wide:1180px;
   --gap:clamp(1.25rem,3vw,2.25rem);
 }
@@ -94,7 +97,7 @@ p{margin:0 0 1.05em;max-width:70ch}
 }
 .head-in{display:flex;align-items:center;gap:1rem;min-height:78px;flex-wrap:wrap;padding-top:.5rem;padding-bottom:.5rem}
 .brandmark{display:flex;align-items:center;text-decoration:none;flex:none}
-.brandmark img{width:172px;height:38px}
+.brandmark img{width:172px;height:auto}
 .wordmark{
   font-family:"Archivo",system-ui,sans-serif;font-variation-settings:"wdth" 85;
   font-weight:900;font-size:1.5rem;letter-spacing:-.02em;color:var(--ink);text-transform:lowercase;
@@ -132,8 +135,8 @@ p{margin:0 0 1.05em;max-width:70ch}
 .hero-media img{width:100%;height:100%;object-fit:cover;min-height:220px}
 @media(min-width:900px){
   .hero-grid{grid-template-columns:1.05fr .95fr;gap:clamp(2rem,4vw,3.5rem)}
-  .hero-media{min-height:440px}
-  .hero-media img{min-height:440px}
+  .hero-media{min-height:360px}
+  .hero-media img{min-height:360px}
 }
 .page-head{background:var(--deep);color:var(--paper);border-bottom:8px solid var(--brand);padding:clamp(2.3rem,5vw,3.6rem) 0}
 .page-head h1{color:var(--paper);margin-bottom:.35em}
@@ -177,6 +180,9 @@ section{padding:clamp(2.8rem,6vw,4.8rem) 0}
   padding:1.5rem 1.4rem 1.6rem;
 }
 .tint .card{background:var(--paper)}
+.card-a{border-top-color:var(--mark-pink)}
+.card-b{border-top-color:var(--mark-green)}
+.card-c{border-top-color:var(--mark-gold)}
 .card h3{margin-bottom:.5rem}
 .card p:last-child{margin-bottom:0}
 .card ul{margin:.6rem 0 0;padding-left:1.1rem}
@@ -218,6 +224,7 @@ section{padding:clamp(2.8rem,6vw,4.8rem) 0}
 /* media */
 .figure{border:1px solid var(--line);background:var(--surface)}
 .figure img{width:100%;height:auto}
+.figure-wide img{aspect-ratio:480/190;object-fit:cover}
 .figure figcaption{padding:.7rem .9rem;font-size:.85rem;color:var(--muted)}
 .videos{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem;margin-top:2rem}
 @media(min-width:900px){.videos{grid-template-columns:repeat(4,1fr)}}
@@ -341,7 +348,7 @@ section{padding:clamp(2.8rem,6vw,4.8rem) 0}
   <header class="site-head">
     <div class="wrap head-in">
       <a class="brandmark" href="index.html">
-        <img src="img/logo.png" alt="Trassig" width="172" height="38">
+        <img src="img/logo.png" alt="Trassig" width="400" height="88">
       </a>
       <nav class="nav" aria-label="Main">
         <a href="index.html">Home</a>
